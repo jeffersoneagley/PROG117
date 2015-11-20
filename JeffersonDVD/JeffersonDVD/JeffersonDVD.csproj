@@ -73,6 +73,7 @@
     <Content Include="BuyDVD.aspx" />
     <Content Include="CSS\Images\my-background.jpg" />
     <Content Include="CSS\Mains.css" />
+    <Content Include="helloGIT.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="details.aspx.designer.cs">
       <DependentUpon>details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="helloGIT.aspx.cs">
+      <DependentUpon>helloGIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="helloGIT.aspx.designer.cs">
+      <DependentUpon>helloGIT.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
