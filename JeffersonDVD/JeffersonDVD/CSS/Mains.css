@@ -1,0 +1,127 @@
+﻿body {
+    background-image: url(Images/my-background.jpg); 
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-color:darkslategray;
+    color:aqua;
+}
+
+h1 {
+    font-size:xx-large;
+    color:lightseagreen;
+}
+
+h2 {
+    font-size: large;
+    color:aqua;
+}
+
+.menu{
+    padding: 1px;
+}
+
+.Menu {
+    border:groove 5px darkslategrey;
+    background-color:cadetblue;
+    display:inline-flex;
+    vertical-align:top;
+    margin: auto auto auto auto;
+    padding-bottom: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width:10%;
+    min-width:6em;
+}
+.MenuDyn
+{
+    padding-bottom: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border:groove 5px darkslategrey;
+    background-color:cadetblue;
+    width:100%;
+}
+
+.MenuItem{
+    border: 2px groove slategray;
+    background-color:cadetblue;
+    padding: 0.2em;
+    font-size:large;
+    text-decoration: none;
+}
+
+.MenuItemHover {
+    background-color:aliceblue;
+    border: 2px double slategray;
+    color:cadetblue;
+    text-decoration:initial;
+}
+
+.widelabel {
+  display:-moz-inline-block;
+  display:inline-block;
+  width: 100px;
+}
+
+.buttonfy {
+    border:groove 4px darkslategrey;
+    display:inline-block;
+    background-color:cadetblue;
+    text-decoration: none;
+    font-size:large;
+    padding:0.2em;
+    padding-left:1em;
+    padding-right:1em;
+    min-width: 100px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.buttonfy:hover {
+    background-color:aliceblue;
+    color:darkblue;
+}
+
+
+.Wrapper {
+    margin-right:auto;
+    margin-left:auto;
+    width:99%;
+}
+
+.Header {
+    width: 100%;
+}
+
+.Content {
+    display:inline-block;
+    margin-right:10px;
+    margin-left:10px;
+    width: 80%;
+    min-width:6em;
+    overflow-y:scroll;
+}
+.Footer {
+
+}
+
+
+.prettyTable
+{
+    border-width:medium;
+
+}
+
+td, th, prettyTable>tbody>tr>th, prettyTable>tbody>tr>td
+{
+    border-width:medium;
+    padding-left:.5em;
+    padding-right:.5em;
+    text-align:center;
+}
+
+th
+{
+    font-weight:bold;
+}
+
