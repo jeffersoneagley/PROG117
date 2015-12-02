@@ -86,6 +86,8 @@ namespace JeffersonDVD.admin
             TextBoxDVDArtist.Enabled = b;
             TextBoxDVDRating.Enabled = b;
             TextBoxDVDPrice.Enabled = b;
+            textboxDVDDescription.Enabled = b;
+            textboxDVDPicURL.Enabled = b;
             LabelDVDTitle.Enabled = b;
             LabelDVDArtist.Enabled = b;
             LabelDVDRating.Enabled = b;
@@ -103,6 +105,8 @@ namespace JeffersonDVD.admin
             TextBoxDVDArtist.Text = string.Empty;
             TextBoxDVDRating.Text = string.Empty;
             TextBoxDVDPrice.Text = string.Empty;
+            textboxDVDDescription.Text = string.Empty;
+            textboxDVDPicURL.Text = string.Empty;
         }
 
         /*
@@ -117,7 +121,7 @@ namespace JeffersonDVD.admin
             SqlDataReader reader;
             string connectionString = ConfigurationManager.ConnectionStrings["DVDconnstring"].ConnectionString;
             conn = new SqlConnection(connectionString);
-            comm = new SqlCommand("SELECT DVDtitle, DVDartist, DVDrating, DVDprice FROM DVDtable WHERE DVDID=@DVDID", conn);
+            comm = new SqlCommand("SELECT DVDtitle, DVDartist, DVDrating, DVDprice, d.Description AS DVDdescription, d.PicURL AS DVDpic FROM DVDtable AS t INNER JOIN Details AS d ON t.DVDID=d.DVDID WHERE t.DVDID = @DVDID", conn);
             comm.Parameters.Add("DVDID", System.Data.SqlDbType.Int);
             comm.Parameters["DVDID"].Value = Convert.ToInt32(DropDownListDVD.SelectedValue);
             try
@@ -130,6 +134,8 @@ namespace JeffersonDVD.admin
                     TextBoxDVDArtist.Text = reader["DVDartist"].ToString();
                     TextBoxDVDRating.Text = reader["DVDrating"].ToString();
                     TextBoxDVDPrice.Text = reader["DVDprice"].ToString();
+                    textboxDVDPicURL.Text = reader["DVDpic"].ToString();
+                    textboxDVDDescription.Text = reader["DVDdescription"].ToString();
                     dbErrorLabel.Text = "DVD information loaded. Make changes, the press save to keep them, "
                         +" press revert to re-load the DVD and make changes over again. Press cancel to select another DVD. ";
                 }
@@ -147,6 +153,8 @@ namespace JeffersonDVD.admin
                 conn.Close();
             }
         }
+
+
 
 
         //Get the initial Select Box list of DVD names

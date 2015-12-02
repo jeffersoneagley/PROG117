@@ -18,6 +18,13 @@
     <asp:Label ID="LabelDVDPrice" CssClass="widelabel" AssociatedControlID="TextBoxDVDPrice" runat="server">Price: </asp:Label>
     <asp:TextBox ID="TextBoxDVDPrice" runat="server"></asp:TextBox>
     <br />
+
+    <asp:Label ID="LabelDescription" runat="server" Text="Description" CssClass="widelabel" AssociatedControlID="textboxDVDDescription" />
+    <asp:TextBox ID="textboxDVDDescription" runat="server" TextMode="MultiLine" />
+    <br />
+    <asp:Label ID="LabelURL" runat="server" Text="URL of image" CssClass="widelabel" AssociatedControlID="textboxDVDPicURL" />
+    <asp:TextBox ID="textboxDVDPicURL" runat="server" />
+
     <asp:Button ID="ButtonDVDEditSave" runat="server" Text="Save Changes" OnClick="ButtonDVDEditSave_Click" />
     <asp:Button ID="ButtonDVDEditCancel" runat="server" Text="Cancel" OnClick="ButtonDVDEditCancel_Click" />
     <asp:Button ID="ButtonDVDEditRevert" runat="server" Text="Revert" OnClick="ButtonDVDEditRevert_Click" />  

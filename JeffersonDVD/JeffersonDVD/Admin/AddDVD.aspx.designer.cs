@@ -85,6 +85,42 @@ namespace JeffersonDVD.admin {
         protected global::System.Web.UI.WebControls.TextBox textboxDVDPrice;
         
         /// <summary>
+        /// LabelDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDescription;
+        
+        /// <summary>
+        /// textboxDVDDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textboxDVDDescription;
+        
+        /// <summary>
+        /// LabelURL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelURL;
+        
+        /// <summary>
+        /// textboxDVDPicURL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textboxDVDPicURL;
+        
+        /// <summary>
         /// ButtonAddDvd control.
         /// </summary>
         /// <remarks>
