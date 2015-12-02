@@ -18,3 +18,23 @@ c:\users\fish\documents\visual studio 2015\Projects\JeffersonDVD\JeffersonDVD\bi
 c:\users\fish\documents\visual studio 2015\Projects\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.csprojResolveAssemblyReference.cache
 c:\users\fish\documents\visual studio 2015\Projects\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.dll
 c:\users\fish\documents\visual studio 2015\Projects\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.pdb
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\csc.exe
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\vbc.exe
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\VBCSCompiler.exe
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\JeffersonDVD.dll.config
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\JeffersonDVD.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\JeffersonDVD.pdb
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.csprojResolveAssemblyReference.cache
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.dll
+C:\Users\fish\Documents\_BC\GIT\PROG117\JeffersonDVD\JeffersonDVD\obj\Debug\JeffersonDVD.pdb

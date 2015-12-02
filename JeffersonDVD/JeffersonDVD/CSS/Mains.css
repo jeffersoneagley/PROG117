@@ -16,6 +16,11 @@ h2 {
     color:aqua;
 }
 
+.justinline
+{
+    display:inline-block;
+}
+
 .menu{
     padding: 1px;
 }
