@@ -275,7 +275,7 @@ namespace JeffersonDVD.admin
             }
             finally
             {
-                conn.Close();
+                conn.Close(); 
             }
             
         }
