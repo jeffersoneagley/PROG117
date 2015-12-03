@@ -12,6 +12,7 @@
 
     <asp:Label ID="dbErrorLabel" runat="server"></asp:Label>
 
+    <h2>Customers</h2>
     <asp:DataList ID="DataListCustomers" CssClass="prettyTable" runat="server">
         <HeaderTemplate>
             <td>CustomerID
@@ -34,6 +35,7 @@
         </ItemTemplate>
     </asp:DataList>
 
+    <h2>Orders for customer</h2>
     <asp:DataList ID="DataListOrders" CssClass="prettyTable" runat="server">
         <HeaderTemplate>
             <td>
