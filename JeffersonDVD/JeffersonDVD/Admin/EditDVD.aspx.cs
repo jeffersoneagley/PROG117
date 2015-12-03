@@ -35,6 +35,7 @@ namespace JeffersonDVD.admin
         {
             int DVDID = Convert.ToInt32(DropDownListDVD.SelectedValue);
             sqlUpdateItem(DVDID, TextBoxDVDTitle.Text, TextBoxDVDArtist.Text, TextBoxDVDRating.Text, TextBoxDVDPrice.Text);
+            sqlUpdateItemDetail(DVDID, textboxDVDDescription.Text, textboxDVDPicURL.Text);
             DropDownListDVD.SelectedIndex = -1;
             UISelectRepopulate();
             UIModeSelect();
@@ -121,21 +122,32 @@ namespace JeffersonDVD.admin
             SqlDataReader reader;
             string connectionString = ConfigurationManager.ConnectionStrings["DVDconnstring"].ConnectionString;
             conn = new SqlConnection(connectionString);
-            comm = new SqlCommand("SELECT DVDtitle, DVDartist, DVDrating, DVDprice, d.Description AS DVDdescription, d.PicURL AS DVDpic FROM DVDtable AS t INNER JOIN Details AS d ON t.DVDID=d.DVDID WHERE t.DVDID = @DVDID", conn);
+            comm = new SqlCommand("SELECT DVDtitle, DVDartist, DVDrating, DVDprice, d.Description AS DVDdescription, d.PicURL AS DVDpic FROM DVDtable AS t LEFT OUTER JOIN Details AS d ON t.DVDID=d.DVDID WHERE t.DVDID = @DVDID", conn);
             comm.Parameters.Add("DVDID", System.Data.SqlDbType.Int);
             comm.Parameters["DVDID"].Value = Convert.ToInt32(DropDownListDVD.SelectedValue);
             try
             {
                 conn.Open();
                 reader = comm.ExecuteReader();
+                Console.WriteLine(reader);
+                
                 if (reader.Read())
                 {
                     TextBoxDVDTitle.Text = reader["DVDTitle"].ToString();
                     TextBoxDVDArtist.Text = reader["DVDartist"].ToString();
                     TextBoxDVDRating.Text = reader["DVDrating"].ToString();
                     TextBoxDVDPrice.Text = reader["DVDprice"].ToString();
-                    textboxDVDPicURL.Text = reader["DVDpic"].ToString();
-                    textboxDVDDescription.Text = reader["DVDdescription"].ToString();
+                    if(reader["DVDpic"]!= null)
+                    {
+                        textboxDVDPicURL.Text = reader["DVDpic"].ToString();
+                        textboxDVDDescription.Text = reader["DVDdescription"].ToString();
+                    }
+                    else
+                    {
+                        textboxDVDPicURL.Text = string.Empty;
+                        textboxDVDPicURL.Text = string.Empty;
+                    }
+                    
                     dbErrorLabel.Text = "DVD information loaded. Make changes, the press save to keep them, "
                         +" press revert to re-load the DVD and make changes over again. Press cancel to select another DVD. ";
                 }
@@ -229,21 +241,65 @@ namespace JeffersonDVD.admin
             }
         }
 
-        protected void sqlDeleteItem()
+        //uploads the changes to the DVD detail table in the database
+        private void sqlUpdateItemDetail(int DVDID, string newDesc, string newPicURL)
         {
-            int DVDID = Int32.Parse(DropDownListDVD.SelectedValue);
             SqlConnection conn;
             SqlCommand comm;
             string cs = ConfigurationManager.ConnectionStrings["DVDconnstring"].ConnectionString;
             conn = new SqlConnection(cs);
-            comm = new SqlCommand("DELETE FROM DVDtable WHERE DVDID = @DVDID", conn);
+            comm = new SqlCommand("UPDATE Details "
+                + " SET Description = @NewDescription, "
+                + " PicURL = @NewPicURL "
+                + " WHERE DVDID = @DVDID;"
+                + "     IF @@ROWCOUNT=0 "
+                + "     INSERT INTO Details(DVDID, Description, PicURL) "
+                + "         VALUES ( @DVDID, @NewDescription, @NewPicURL); "
+                , conn
+                );
             try
             {
                 comm.Parameters.Add("@DVDID", System.Data.SqlDbType.Int);
                 comm.Parameters["@DVDID"].Value = DVDID;
+                comm.Parameters.Add("@NewDescription", System.Data.SqlDbType.NVarChar, 500);
+                comm.Parameters["@NewDescription"].Value = newDesc;
+                comm.Parameters.Add("@NewPicURL", System.Data.SqlDbType.NVarChar, 100);
+                comm.Parameters["@NewPicURL"].Value = newPicURL;
+                conn.Open();
+                comm.ExecuteNonQuery();
+                dbErrorLabel.Text = " ** ";
+            }
+            catch (Exception e)
+            {
+                dbErrorLabel.Text = e.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+        }
+
+        protected void sqlDeleteItem()
+        {
+            int DVDID = Int32.Parse(DropDownListDVD.SelectedValue);
+            SqlConnection conn;
+            SqlCommand comm, comm2;
+            string cs = ConfigurationManager.ConnectionStrings["DVDconnstring"].ConnectionString;
+            conn = new SqlConnection(cs);
+            comm = new SqlCommand("DELETE FROM DVDtable WHERE DVDID = @DVDID", conn);
+            comm2 = new SqlCommand("DELETE FROM Details WHERE DVDID = @DVDID", conn);
+            try
+            {
+                comm.Parameters.Add("@DVDID", System.Data.SqlDbType.Int);
+                comm.Parameters["@DVDID"].Value = DVDID;
+                comm2.Parameters.Add("@DVDID", System.Data.SqlDbType.Int);
+                comm2.Parameters["@DVDID"].Value = DVDID;
                 conn.Open();
                 comm.ExecuteNonQuery();
                 dbErrorLabel.Text = TextBoxDVDTitle.Text + " deleted from database!";
+                comm2.ExecuteNonQuery();
+                dbErrorLabel.Text += " ** ";
             }
             catch
             {
