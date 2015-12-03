@@ -59,7 +59,12 @@ namespace JeffersonDVD.Admin
                  " WHERE CustomerID = @CustomerID"
                 , conn);
             comm.Parameters.Add("CustomerID", System.Data.SqlDbType.Int);
-            comm.Parameters["CustomerID"].Value = Int32.Parse(TextboxCustNum.Text);
+            int CustID = 0;
+            if(!Int32.TryParse(TextboxCustNum.Text, out CustID))
+            {
+                CustID = 0;
+            }
+            comm.Parameters["CustomerID"].Value = CustID;
             try
             {
                 conn.Open();
